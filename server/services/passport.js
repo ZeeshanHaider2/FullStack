@@ -5,6 +5,17 @@ const keys = require("../config/keys");
 
 const User = mongoose.model("users");
 
+passport.serializeUser((user, done) => {
+  //same user that was added to the DB
+  done(null, user.id); //NOT the google profile id! but the _id:5de5aba68340804294bb24e9 googleId:"105626625191330283341"
+});
+
+passport.deserializeUser((id, done) => {
+  User.findById(id).then(user => {
+    done(null, user);
+  });
+});
+
 passport.use(
   new GoogleStrategy(
     {
