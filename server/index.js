@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const keys = require("./config/keys");
-require("./models/User");
+require("./models/User"); //the order can make a difference i.e.it should come above
 require("./services/passport");
 
 mongoose.connect(keys.mongoURI);

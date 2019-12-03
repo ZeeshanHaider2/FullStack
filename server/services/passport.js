@@ -16,7 +16,14 @@ passport.use(
       //console.log("access token:", accessToken);
       //console.log("refresh token:", refreshToken);
       //console.log("profile:", profile);
-      new User({ googleId: profile.id }).save();
+      User.findOne({ googleId: profile.id }).then(existingUser => {
+        if (existingUser) {
+          //We already have a record with the given profile ID
+        } else {
+          //We don't have a user record with this id, create one!
+          new User({ googleId: profile.id }).save();
+        }
+      });
     }
   )
 );
