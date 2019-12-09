@@ -1,2 +1,2 @@
 # FullStack
-A Project using MERN Stack using React.Js and Redux as front-end.
+A Project using MERN Stack using React.Js and Redux at front-end.
