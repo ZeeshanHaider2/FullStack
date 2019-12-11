@@ -1,4 +1,5 @@
 //App.js will hold REdux stuff/Data
+import materializeCSS from "materialize-css/dist/css/materialize.min.css";
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
@@ -16,7 +17,7 @@ ReactDOM.render(
   document.querySelector("#root")
 );
 
-//store passed as prop to provider which is a react comp that knows how to
+//store passed as prop to provide which is a react comp that knows how to
 //read changes from the Redux store, anytime redux store gets some new state
 //produced inside of it, the provider will inform all its child comp i.e.App
 //about the new state being available and will update the component with the
