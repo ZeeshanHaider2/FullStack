@@ -3,5 +3,11 @@ import axios from "axios";
 import { FETCH_USER } from "./types";
 
 const fetchUser = () => {
-  axios.get("/api/current_user");
+  return function(dispatch) {
+    axios
+      .get("/api/current_user")
+      .then(res => dispatch({ type: FETCH_USER, payload: res }));
+  };
 };
+//fetchUser action creator, which is intended to make a request to our back-end api and somehow
+//communicate to our Oauth reducer whether Or Not our user is logged in. 83
