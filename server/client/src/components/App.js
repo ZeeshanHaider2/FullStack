@@ -6,9 +6,11 @@ import { connect } from "react-redux";
 import * as actions from "../actions";
 
 import Header from "./Header";
+import Landing from "./Landing";
+
 const Dashboard = () => <h2>Fizzit Dashboard</h2>;
 const SurveyNew = () => <h2>Fizzit Survey/Blog</h2>;
-const Landing = () => <h2>Fizzit Landing Page</h2>;
+//const Landing = () => <h2>Fizzit Landing Page</h2>;
 
 class App extends Component {
   componentDidMount() {
