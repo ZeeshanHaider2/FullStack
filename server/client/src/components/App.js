@@ -2,15 +2,19 @@
 import React, { Component } from "react"; //for class based
 //import React from "react";
 import { BrowserRouter, Route } from "react-router-dom"; //contains set of react router helpers for dom navigation
-//We have created a functional component that returns a little bit of JSX
+import { connect } from "react-redux";
+import * as actions from "../actions";
 
-//const Header = () => <h2>Header</h2>;
 import Header from "./Header";
 const Dashboard = () => <h2>Fizzit Dashboard</h2>;
 const SurveyNew = () => <h2>Fizzit Survey/Blog</h2>;
 const Landing = () => <h2>Fizzit Landing Page</h2>;
 
 class App extends Component {
+  componentDidMount() {
+    this.props.fetchUser();
+  }
+
   render() {
     return (
       <div className="container">
@@ -43,4 +47,4 @@ class App extends Component {
 //   );
 // };
 
-export default App;
+export default connect(null, actions)(App);
